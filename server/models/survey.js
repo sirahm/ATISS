@@ -12,7 +12,7 @@ let surveyModel = mongoose.Schema({
 
 },
 {
-    collection: "answers"
+    collection: "surveys"
 });
 
 module.exports = mongoose.model('Survey-Answer', surveyModel);

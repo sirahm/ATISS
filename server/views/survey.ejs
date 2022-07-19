@@ -1,6 +1,6 @@
-<%- include partials/header.ejs %>
+<%- include('./partials/header.ejs');%>
 
-<%- include partials/main_nav.ejs %>
+  <%- include ('./partials/main_nav.ejs' );%>
 
 <!--Main content-->
 <main class="container">
@@ -9,7 +9,7 @@
           <div class="px-4 py-4 my-4 text-center">
               <h1 class="display-5 fw-bold"><%= title %></h1>
           </div>
-          <a href="/survey/add" class="btn btn-primary" role="button">
+          <a href="/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i> Add Survey</a>
           <table class="table table-bordered table-striped table-hover" id="tableSurvey">
               <!-- Header Row-->
@@ -53,6 +53,6 @@
 
 
 
-<%- include partials/bottom_nav.ejs %>
+<%- include ('./partials/bottom_nav.ejs'); %>
 
-<%- include partials/footer.ejs %>
+  <%- include ('./partials/footer.ejs'); %>

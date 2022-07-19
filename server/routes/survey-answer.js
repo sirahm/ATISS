@@ -58,55 +58,52 @@ router.get('/', (req, res, next) => {
     });
 });
 
+//GET route for displaying the edit page
+router.get('/edit/:id', (req, res, next) => {
+let id = req.params.id;
 
+    Survey.findById(id, (err, surveyToEdit) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            //show the edit view
+            res.render('edit', {title: 'Edit Survey', SurveyList: surveyToEdit})
+        }
+    });
+  });  
 
+// POST the Book Details page in order to edit an existing Book
+router.post('/edit/:id', (req, res, next) => {
+  let id = req.params.id
 
-  //GET route for displaying the edit page
-  router.get('/edit/:id', (req, res, next) => {
-  let id = req.params.id;
-  
-      Survey.findById(id, (err, surveyAnswers) => {
-          if(err)
-          {
-              console.log(err);
-              res.end(err);
-          }
-          else
-          {
-              //show the edit view
-              res.render('/edit', {title: 'Edit Survey', SurveyList: surveyAnswers})   
-              
-          }
-      });
-    });  
-  
-    router.post('/edit/:id', (req, res, next) => {
-        let id = req.params.id
-      
-        let updatedSurvey = Survey({
-          "_id": id,
-          "SurveyID": req.body.SurveyID,
-          "OwnerID": req.body.OwnerID,
-          "SurveyName": req.body.SurveyName,
-          "EndDate": req.body.EndDate,
-          "Active": req.body.Active
-          
-        });
-      
-        Survey.updateOne({_id: id}, updatedSurvey, (err) => {
-            if(err)
-            {
-                console.log(err);
-                res.end(err);
-            }
-            else
-            {
-                // refresh the book list
-                res.redirect('/survey');
-            }
-        });
-      });
-  
+  let updatedSurvey = Survey({
+        "_id": id,
+        "SurveyID": req.body.SurveyID,
+        "OwnerID": req.body.OwnerID,
+        "SurveyName": req.body.SurveyName,
+        "EndDate": req.body.EndDate,
+        "Active": req.body.Active
+    
+  });
+
+  Survey.updateOne({_id: id}, updatedSurvey, (err) => {
+      if(err)
+      {
+          console.log(err);
+          res.end(err);
+      }
+      else
+      {
+          // refresh the survey list
+          res.redirect('survey');
+      }
+  });
+});
+
   
   // GET - process the delete by user id
   router.get('/delete/:id', (req, res, next) => {

@@ -1,6 +1,6 @@
 /*Custom css design goes here*/
 nav {
-  background-color: #8ADCFF;
+  background-color: #ffffff;
 }
 
 body {
@@ -8,9 +8,9 @@ body {
 }
 
 #homeMain, #errorPage {
-  background-color: #D9F4FF;
+  background-color: #ffffff;
 }
 
 tr{
-  background-color: #D9F4FF;
+  background-color: #f8f2ff;
 }

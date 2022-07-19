@@ -6,75 +6,50 @@
     <div class="row">
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
+<form class="form" method="POST">
+    <div class="form-group">
+        <label for="nameTextField">Survey ID</label>
+        <input type="text" class="form-control" id="nameTextField" placeholder="Enter the SurveyID" name="name"
+            value="<%= SurveyList.SurveyID%>" required>
+    </div>
 
-            <form class="form" method="POST">
-                <div class="form-group">
-                    <label for="nameTextField">Survey ID</label>
-                    <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Book Title"
-                    name="name" 
-                    value="<%= SurveyList.SurveyID%>"
-                    required>
-                </div>
+    <div class="form-group">
+        <label for="authorTextField">Owner ID</label>
+        <input type="text" class="form-control" id="authorTextField" placeholder="Enter the Book's Author" name="author"
+            value="<%= SurveyList.OwnerID %>" required>
+    </div>
 
-                <div class="form-group">
-                    <label for="authorTextField">Owner ID</label>
-                    <input type="text" class="form-control"
-                    id="authorTextField"
-                    placeholder="Enter the Book's Author"
-                    name="author" 
-                    value="<%= SurveyList.OwnerID %>"
-                    required>
-                </div>
+    <div class="form-group">
+        <label for="publishedTextField">Survey Name</label>
+        <input type="text" class="form-control" id="publishedTextField" placeholder="Enter the Genre" name="published"
+            value="<%= SurveyList.SurveyName%>" required>
+    </div>
 
-                <div class="form-group">
-                    <label for="publishedTextField">Survey Name</label>
-                    <input type="text" class="form-control"
-                    id="publishedTextField"
-                    placeholder="Enter the Genre"
-                    name="published" 
-                    value="<%= SurveyList.SurveyName%>"
-                    required>
-                </div>
-
-                <div class="form-group">
-                    <label for="descriptionTextArea">Start Date</label>
-                    <textarea type="text" class="form-control"
-                    id="descriptionTextArea"
-                    placeholder="Enter the a brief description of the book"
-                    name="description" 
-                    value=""
-                    required><%= survey.StartDate %>
+    <div class="form-group">
+        <label for="descriptionTextArea">Start Date</label>
+        <textarea type="text" class="form-control" id="descriptionTextArea"
+            placeholder="Enter the a brief description of the book" name="description" value="" required><%= SurveyList.StartDate %>
         
                     </textarea>
-                </div>
+    </div>
 
-                <div class="form-group">
-                    <label for="priceTextField">End Date</label>
-                    <input type="text" class="form-control"
-                    id="priceTextField"
-                    placeholder="Enter the Book's Price"
-                    name="price" 
-                    value="<%= survey.EndDate %>"
-                    required>
-                </div>
+    <div class="form-group">
+        <label for="priceTextField">End Date</label>
+        <input type="text" class="form-control" id="priceTextField" placeholder="Enter the End Date" name="price"
+            value="<%= SurveyList.EndDate %>" required>
+    </div>
 
-                <div class="form-group">
-                    <label for="priceTextField">Active</label>
-                    <input type="text" class="form-control"
-                    id="priceTextField"
-                    placeholder="Enter the Book's Price"
-                    name="price" 
-                    value="<%= survey.Active %>"
-                    required>
-                </div>
+    <div class="form-group">
+        <label for="priceTextField">Active</label>
+        <input type="text" class="form-control" id="priceTextField" placeholder="Enter the Book's Price" name="price"
+            value="<%= SurveyList.Active %>" required>
+    </div>
 
-                <button class="btn btn-primary" type="submit">
-                    <i class="fas fa-edit"></i> Submit</button>
-                
-                    <a href="/books" class="btn btn-warning">
-                        <i class="fas fa-undo"></i> Cancel</a>
+    <button class="btn btn-primary" type="submit">
+        <i class="fas fa-edit"></i> Submit</button>
+
+    <a href="/survey" class="btn btn-warning">
+        <i class="fas fa-undo"></i> Cancel</a>
 
             </form>
         </div>

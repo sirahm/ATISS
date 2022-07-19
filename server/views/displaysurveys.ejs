@@ -1,0 +1,58 @@
+<%- include('./partials/header.ejs');%>
+
+    <%- include ('./partials/main_nav.ejs' );%>
+
+        <!--Main content-->
+        <main class="container">
+            <div class="row">
+                <div class="offset-md-1 col-md-10">
+                    <div class="px-4 py-4 my-4 text-center">
+                        <h1 class="display-5 fw-bold">
+                            <%= title %>
+                        </h1>
+                    </div>
+          
+                    <table class="table table-bordered table-striped table-hover" id="tableSurvey">
+                        <!-- Header Row-->
+                        <tr>
+                            <th class="text-center">Survey ID</th>
+                            <th class="text-center">Question Type</th>
+                            <th class="text-center">Question Text</th>
+                            <th class="text-center">Option</th>
+                         
+                         
+                            <th></th>
+                            <th></th>
+
+                        </tr>
+
+                        <!-- Repeatable Template Row -->
+                       
+                        <% for(let i=0; i < SurveyQ.length; i++) { %>
+                            <tr>
+                                <td class="text-center">
+                                    <%= SurveyQ[i].SurveyID%>
+                                </td>
+                        
+                                <td class="text-center">
+                                    <%= SurveyQ[i].QuestionType%>
+                                </td>
+                                <td class="text-center">
+                                    <%= SurveyQ[i].QuestionText%>
+                                </td>
+                                <td class="text-center">
+                                    <%= SurveyQ[i].OptionCount%>
+                                </td>
+                            
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+
+
+<%- include ('./partials/bottom_nav.ejs'); %>
+
+    <%- include ('./partials/footer.ejs'); %>
