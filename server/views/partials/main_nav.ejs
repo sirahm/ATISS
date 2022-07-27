@@ -13,14 +13,25 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link <%= title == 'Home' ? 'active': '' %>" aria-current="page" href="/"><i
-                            class="fas fa-home"></i> Home </a>
+                            class="fa fa-home"></i> Home </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link  <%= title == 'Survey Table' ? 'active': '' %>" aria-current="page"
-                        href="/survey"><i class="fas fa-poll-h"></i>
+                        href="/survey"><i class="fa fa-poll-h"></i>
                         Survey</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link  <%= title == 'Login' ? 'active': '' %>" aria-current="page"
+                        href="/login"><i class="fa fa-sign-in"></i>
+                        Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  <%= title == 'Logout' ? 'active': '' %>" aria-current="page"
+                        href="/logout"><i class="fa fa-sign-out"></i>
+                        Login</a>
+                </li>
             </ul>
+            
         </div>
     </div>
 </nav>
